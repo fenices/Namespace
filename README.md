@@ -54,13 +54,7 @@
     <script src='Packages/Namespace/Namespace_2.0.0.js' start=''></script>
 </html>
 ```
-
-1. Chrome测试ok
-2. Firfox测试ok
-3. Edge应该也没问题
-4. 遨游测试ok
-5. IE帕斯，不知道是不是console写的有问题，有空试试看
-6. 其他浏览器没装，不知道怎么样
+未完待续...
 ---
 ## v1.x.x
 这是很多年前的版本，只能躺在我硬盘里做纪念了
