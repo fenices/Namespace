@@ -12,18 +12,48 @@
 
 &emsp;&emsp;整个代码反正也没多长我就不搞Namespace.min.js了（主要是怕错 囧rz..）  
 
----
-## v2.0.1
+## 用法
+&emsp;&emsp;Namespace只提供了一个方法，就是用Namespace.Import或简写NS.Import方法从指定的路径加载文件，并返回文件内与文件名同名的function的引用，该function就是构造函数，因为是同步加载，所以立即返回，无需等待，没有中间商回调，例如网站目录如下：  
 
+> Website
+>
+> > Pages
+> >
+> > > index.html
+> >
+> > Starts
+> >
+> > > Main.js
+> >
+> > Packages
+> >
+> > > Namespace
+> > >
+> > > > Namespace_2.0.0.js
+> >
+> > Modules
+> >
+> > >Shapes
+> > >
+> > >> Circle.js
+> > >>
+> > >> Rectangle.js
+> > >>
+> > >> Triangles.js
+> > >
+> > >Structs
+> > >
+> > >> Vector2.js
+> > >
+> > >Utils
+> > >
+> > >> Helper.js
 
-
-## v2.0.0
-
-
-
-**使用方法**  
-只提供了一个方法就是，从'Path/ClassX.js'以同步方式加载文件，并返回ClassX的引用  
-var ClassX = Namespace.Import('Path.ClassX')   
+```html
+<html>
+    <script src='Packages/Namespace/Namespace_2.0.0.js' start=''></script>
+</html>
+```
 
 1. Chrome测试ok
 2. Firfox测试ok
