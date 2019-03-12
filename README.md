@@ -13,7 +13,7 @@
 &emsp;&emsp;整个代码反正也没多长我就不搞Namespace.min.js了（主要是怕错 囧rz..）  
 
 ## 用法
-&emsp;&emsp;Namespace只提供了一个方法，就是用Namespace.Import或简写NS.Import方法从指定的路径加载文件，并返回文件内与文件名同名的function的引用，该function就是构造函数，因为是同步加载，所以立即返回，无需等待，没有中间商回调，需要注意的是，所有Import的路径都是以，写下该Import代码所在文件目录为起点，如：Main里面的Import就是以Main.js所在的目录为起点，同级目录就是直接引用，这种相对路径的引用方式，可以避免因为不同项目路径造成的文件引用问题，下面是一个简单的例子程序：  
+&emsp;&emsp;Namespace只提供了一个方法，就是用Namespace.Import或简写NS.Import方法从指定的路径加载文件，并返回文件内与文件名同名的function的引用，该function就是构造函数，因为是同步加载，所以立即返回，无需等待，没有中间商回调，需要注意的是，所有Import的路径都是以写下该Import代码所在文件目录为起点，如：Main里面的Import就是以Main.js所在的目录为起点，同级目录就是直接引用，这种相对路径的引用方式，可以避免因为不同项目路径造成的文件引用问题，下面是一个简单的例子程序：  
 
 > Website
 >
