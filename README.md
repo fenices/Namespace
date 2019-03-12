@@ -49,7 +49,7 @@ Website/Pages/index.html
 
 ```html
 <html>
-    <script src='Packages/Namespace/Namespace_2.0.0.js' start='../Starts/Main'></script>
+    <script src='../Packages/Namespace/Namespace_2.0.0.js' start='../Starts/Main'></script>
 </html>
 ```
 
@@ -114,5 +114,14 @@ Helper.prototype.DoSomethings = function(){}
 5. IE帕斯，不知道是不是console写的有问题，有空试试看
 6. 其他浏览器没装，不知道怎么样
 ---
+## 2.0.1
+
+优化了Import内部变量，提高可读性。
+
+## v2.0.0
+
+重制版，修改了很多之前为解决的Bug。
+
 ## v1.x.x
-这是很多年前的版本，只能躺在我硬盘里做纪念了
+
+这是很多年前的版本，只能躺在我硬盘里做纪念了。
