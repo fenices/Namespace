@@ -13,7 +13,7 @@
 &emsp;&emsp;整个代码反正也没多长我就不搞Namespace.min.js了（主要是怕错 囧rz..）  
 
 ## 用法
-&emsp;&emsp;Namespace只提供了一个方法，就是用Namespace.Import或简写NS.Import方法从指定的路径加载文件，并返回文件内与文件名同名的function的引用，该function就是构造函数，因为是同步加载，所以立即返回，无需等待，没有中间商回调，例如网站目录如下：  
+&emsp;&emsp;Namespace只提供了一个方法，就是用Namespace.Import或简写NS.Import方法从指定的路径加载文件，并返回文件内与文件名同名的function的引用，该function就是构造函数，因为是同步加载，所以立即返回，无需等待，没有中间商回调，需要注意的是，所有Import的路径都是以，写下该Import代码所在文件目录为起点，如：Main里面的Import就是以Main.js所在的目录为起点，同级目录就是直接引用，这种相对路径的引用方式，可以避免因为不同项目路径造成的文件引用问题，下面是一个简单的例子程序：  
 
 > Website
 >
@@ -37,24 +37,82 @@
 > > >
 > > >> Circle.js
 > > >>
-> > >> Rectangle.js
-> > >>
-> > >> Triangles.js
 > > >
 > > >Structs
 > > >
 > > >> Vector2.js
-> > >
-> > >Utils
-> > >
+> > >>
 > > >> Helper.js
+> > >
+
+Website/Pages/index.html
 
 ```html
 <html>
-    <script src='Packages/Namespace/Namespace_2.0.0.js' start=''></script>
+    <script src='Packages/Namespace/Namespace_2.0.0.js' start='../Starts/Main'></script>
 </html>
 ```
-未完待续...
+
+Website/Starts/Main.js
+
+``` javascript
+var Circle = NS.Import('../Modules/Shapes/Circle');
+
+function Main()
+{
+    var c = new Circle({x:0, y:0, radius:20});
+    c.Print();
+}
+```
+
+Website/Modules/Shapes/Circle.js
+
+``` javascript
+var Vector2 = NS.Import('../Structs/Vector2');
+
+function Circle(option)
+{
+    this.position = new Vector2(option.x, option.y);
+    this.radius = option.radius;
+}
+Circle.prototype.Print = function()
+{
+    console.log('A circle');
+}
+```
+
+Website/Modules/Structs/Vector2.js
+
+```javascript
+var Helper = NS.Import('Helper');
+
+function Vector2(x, y)
+{
+    this.x = x;
+    this.y = y;
+    this.h = new Helper();
+    
+}
+
+Vector2.prototype.Help = function()
+{
+    this.h.DoSomethings();
+}
+```
+
+Website/Modules/Structs/Helper.js
+
+```javascript
+function Helper(){}
+Helper.prototype.DoSomethings = function(){}
+```
+
+1. Chrome测试ok
+2. Firfox测试ok
+3. Edge应该也没问题
+4. 遨游测试ok
+5. IE帕斯，不知道是不是console写的有问题，有空试试看
+6. 其他浏览器没装，不知道怎么样
 ---
 ## v1.x.x
 这是很多年前的版本，只能躺在我硬盘里做纪念了
