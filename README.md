@@ -29,7 +29,7 @@
 > >
 > > > Namespace
 > > >
-> > > > Namespace_2.0.0.js
+> > > > Namespace_2.0.1.js
 > >
 > > Modules
 > >
@@ -49,7 +49,7 @@ Website/Pages/index.html
 
 ```html
 <html>
-    <script src='../Packages/Namespace/Namespace_2.0.0.js' start='../Starts/Main'></script>
+    <script src='../Packages/Namespace/Namespace_2.0.1.js' start='../Starts/Main'></script>
 </html>
 ```
 
