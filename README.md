@@ -114,7 +114,11 @@ Helper.prototype.DoSomethings = function(){}
 5. IE帕斯，不知道是不是console写的有问题，有空试试看
 6. 其他浏览器没装，不知道怎么样
 ---
-## 2.0.1
+## v2.0.2
+
+新增Link方法，可以加载'.com'后缀的html组件文件。
+
+## v2.0.1
 
 优化了Import内部变量，提高可读性。
 
